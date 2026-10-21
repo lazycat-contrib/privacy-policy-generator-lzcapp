@@ -1,0 +1,28 @@
+application:
+  subdomain: privacy-policy
+  background_task: false
+  multi_instance: false
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://app:8080/
+
+services:
+  app:
+    # upstream: ghcr.io/dockers-x/app-privacy-policy-generator:5.2.2（dockers-x 自动跟随上游 tag 构建）
+    image: ghcr.nju.edu.cn/dockers-x/privacy-policy-generator:5.2.0@sha256:38c24c72beb9a84b2d6b4c834a80bf8d1a9fa6b0bba2c5562f6d519f970fb198
+    environment:
+      - TZ=Asia/Shanghai
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - -q
+        - -O
+        - /dev/null
+        - http://127.0.0.1:8080/healthz
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s

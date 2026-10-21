@@ -1,0 +1,15 @@
+package: community.lazycat.app.privacy-policy-generator
+version: 5.2.0
+name: Privacy Policy Generator
+description: "Generate a customized Privacy Policy and Terms of Use document for your mobile apps"
+min_os_version: 1.5.0
+author: nisrulz
+license: AGPL-3.0
+homepage: https://github.com/nisrulz/app-privacy-policy-generator
+locales:
+  zh:
+    name: "隐私政策生成器"
+    description: "为移动应用生成定制化的隐私政策与服务条款文档，支持多语言、多种平台与 SDK 选项"
+  en:
+    name: "Privacy Policy Generator"
+    description: "Generate customized Privacy Policy and Terms of Use for mobile apps"
